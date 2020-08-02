@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 
+
 const app = express();
 const session = require("express-session");
 const mongoose = require("mongoose");
@@ -27,6 +28,7 @@ app.set("views", "views");
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views", "img")));
+app.use(express.static(path.join(__dirname, "client/build")))
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
